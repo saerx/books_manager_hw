@@ -1,15 +1,19 @@
 {% extends 'base.html' %}
 
 {% block content %}
-books
+<h1>Books:</h1>
+
 {% for book in all_books %}
 
     <div>
-        {{book.title}}, {{book.author.first_name}} {{book.author.last_name}} ({{book.publisher}} [{{book.genre}}])
+        <p>
+        <i>{{book.title}}</i>, {{book.author.first_name}} 
+        {{book.author.last_name}} <br>({{book.publisher}}) – [{{book.genre}}]
+        </p>
     </div>
-
+    
 {% endfor %}
-
+<br>
     
 {% endblock content %}
 
