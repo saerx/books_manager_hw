@@ -11,9 +11,15 @@
         {{book.author.last_name}} <br>({{book.publisher}}) – [{{book.genre}}]
         </p>
     </div>
+
+    <div>
+        <form action="/books/{{book.id}}/delete" method ="POST">
+            <button type="submit">Delete</button>
+        </form>
+    </div>
     
 {% endfor %}
-<br>
+ 
     
 {% endblock content %}
 

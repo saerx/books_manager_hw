@@ -1,4 +1,4 @@
-from flask import Flask, render_template, Blueprint
+from flask import Flask, render_template, Blueprint, redirect
 from models.book import Book
 import repositories.book_repository as book_repository
 import repositories.author_repository as author_repository
@@ -39,4 +39,9 @@ def books():
 
 # DELETE
 # DELETE '/books/<id>'
+
+@books_blueprint.route("/books/<id>/delete", methods=["POST"])
+def delete_book(id):
+    book_repository.delete(id)
+    return redirect('/books')
 
