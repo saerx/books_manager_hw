@@ -7,10 +7,12 @@
 
     <div>
         <p>
-        <i>{{book.title}}</i>, {{book.author.first_name}} 
+        <a href="/books/{{book.id}}"><i>{{book.title}}</i></a>, {{book.author.first_name}} 
         {{book.author.last_name}} <br>({{book.publisher}}) – [{{book.genre}}]
         </p>
     </div>
+
+    
 
     <div>
         <form action="/books/{{book.id}}/delete" method ="POST">
